@@ -1,0 +1,156 @@
+:root {
+
+  /****
+   * custom property values
+   ****/
+
+   /**** Colors ****/
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-blue: hsl(203, 100%, 33%);
+  --color-dark_blue: hsl(203, 100%, 22%);
+  --color-light_blue: hsl(203, 100%, 88%);
+  --color-grey_light: hsla(0, 0%, 0%, 0.05);
+  --color-grey_dark: hsl(240, 3%, 21%);
+  --color-orange: hsla(24, 86%, 53%, 1.00);
+  --color-green: hsla(87, 73%, 43%, 1);
+  --color-yellow: hsla(48, 89%, 60%, 1);
+  --color-red: red;
+
+  --color-primary: var(--color-blue);
+  --color-secondary: var(--color-dark-blue);
+  --color-tertiary: var(--color-white);
+
+  --color-success: var(--color-green);
+  --color-error: var(--color-red);
+  --color-notify: var(--color-yellow);
+  --color-info: var(--color-orange);
+  --color-disabled: var(--color-grey-light);
+
+  /* Arbitrary colors */
+  --color-1: hsl(24, 86%, 53%);
+  --color-2: hsl(86.6, 73.4%, 42.7%);
+  --color-3: hsl(48, 89%, 60%);
+  --color-4: hsl(182, 64%, 39%);
+  --color-5: hsl(240, 2%, 30%);
+  --color-6: hsl(203, 64%, 52%);
+  --color-7: hsl(349, 46%, 37%);
+
+
+  /**** Whitespace ****/
+
+    --vertical-rhythm: 1.618;
+    --whitesapce-gutter: 1.618rem;
+
+  /**** Fonts ****/
+
+  --font-sans: "Open Sans", "Helevtica Neue", "Helvetica", sans-serif;
+  --font-serif: "Open Sans", "Helevtica Neue", "Helvetica", sans-serif;
+  --font-mono: "Open Sans", "Helevtica Neue", "Helvetica", sans-serif;
+
+  --font-heading: var(--font-sans);
+  --font-subhead: var(--font-sans);
+  --font-body: var(--font-sans);
+
+  --font_size-base: 1.4rem;
+  --font_size-scale: 1.618;
+  --font_size-xl: calc(var(--font_size-base) * var(--font_size-scale) * var(--font_size-scale));
+  --font_size-lg: calc(var(--font_size-base) * var(--font_size-scale));
+  --font_size-md: calc(var(--font_size-base));
+  --font_size-sm: calc(var(--font_size-base) / var(--font_size-scale));
+  --font_size-xs: calc(var(--font_size-base) / var(--font_size-scale) / var(--font_size-scale));
+
+  --font_size-heading: var(--font_size-xl);
+  --font_size-subhead: var(--font_size-lg);
+  --font_size-lede: var(--font_size-md);
+  --font_size-body: var(--font_size-md);
+
+/****
+ * custom property rules
+ ****/
+
+
+  --font-xl { font-size: var(--font_size-xl); line-height: calc(var(--font_size-scale) / 1.5); }
+  --font-lg { font-size: var(--font_size-lg); line-height: calc(var(--font_size-scale) / 1.25); }
+  --font-md { font-size: var(--font_size-md); line-height: var(--font_size-scale); }
+  --font-sm { font-size: var(--font_size-sm); line-height: var(--font_size-scale); }
+  --font-xs { font-size: var(--font_size-xs); line-height: var(--font_size-scale); }
+
+
+  --header: {
+    margin-bottom: 4rem;
+    background: var(--color-grey_light, hsla(0, 0%, 0%, 0.05));
+    padding: var(--padding, 1em);
+    padding-bottom: 4rem;
+    font-weight: 300;
+  }
+
+  --heading: {
+    color: var(--color-blue, hsl(203, 100%, 33%));
+    font: var(--font-sans, sans-serf;);
+  }
+}
+
+
+/****
+ * Normailization rules
+ ****/
+html {
+  box-sizing: border-box;
+  font-family: var(--font-sans, sans-serif);
+  font-weight: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+label {
+  display: block;
+}
+
+
+/****
+ * exportable/common classes
+ *
+ * These may use css modules 'composes' property.
+ * TODO: See how far we can get with @apply instead.
+ */
+
+.btn {
+  --default-color: var(--color-white);
+  --default-color-hover: var(--color-grey_light);
+  --primary-color: var(--color-blue);
+  --primary-color-hover: var(--color-dark_blue);
+  border: 1px solid;
+  border-radius: 10rem;
+  padding: .7em 1.8em;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1;
+}
+
+.btnDefault {
+  composes: btn;
+  color: var(--primary-color);
+  background-color: var(--default-color);
+  border-color: var(--primary-color);
+  &:hover {
+    background-color:var(--default-color-hover);
+  }
+}
+
+.btnPrimary {
+  composes: btn;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--default-color);
+  &:hover {
+    background-color:--primary-color-hover;
+  }
+}
