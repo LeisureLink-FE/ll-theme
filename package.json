@@ -1,10 +1,9 @@
 {
   "name": "ll-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Primary UI theme for LeisureLink applications",
   "main": "theme.css",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Cory Brown <oh.wise.man@gmail.com>",
   "license": "MIT"
 }
