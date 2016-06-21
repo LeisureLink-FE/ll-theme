@@ -66,6 +66,11 @@
   --font_size-lede: var(--font_size-md);
   --font_size-body: var(--font_size-md);
 
+  --button-default_color: var(--color-white, #fff);
+  --button-default_color-hover: var(--color-grey_light, hsla(0, 0%, 0%, 0.05));
+  --button-primary_color: var(--color-primary, hsl(203, 100%, 33%));
+  --button-primary_color-hover: var(--color-secondary, hsl(203, 100%, 22%));
+
 /****
  * custom property rules
  ****/
