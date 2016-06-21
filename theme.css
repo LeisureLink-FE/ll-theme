@@ -193,6 +193,6 @@ a {
    color: var(--color-white);
 
    &:hover {
-     background-color: var(--color-light_blue);
+     background-color: var(--color-dark_blue);
    }
  }
